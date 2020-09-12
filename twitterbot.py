@@ -17,8 +17,6 @@ for tweet in tweepy.Cursor(api.search, q = QUERY).items():
   
         tweet.retweet() 
         print('Retweeted the tweet') 
-  
-        # Favorite the tweet 
         if LIKE: 
             tweet.favorite() 
             print('Favorited the tweet') 
@@ -28,7 +26,6 @@ for tweet in tweepy.Cursor(api.search, q = QUERY).items():
                 print('Followed the user') 
   
         sleep(SLEEP_TIME) 
-  
     except tweepy.TweepError as e: 
         print(e.reason) 
   
